@@ -2,6 +2,7 @@ package firstSteps;
 
 import org.restlet.Application;
 import org.restlet.Restlet;
+import org.restlet.resource.Directory;
 import org.restlet.routing.Router;
 
 /**
@@ -19,6 +20,9 @@ public class FirstStepsApplication extends Application {
 
         // Defines only one route
         router.attachDefault(HelloWorldResource.class);
+        //Them 1 class
+        //router.attachDefault(new Directory(getContext(), "war:///"));
+        router.attach("/contact", ContactServerResource.class);
 
         return router;
     }
